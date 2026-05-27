@@ -2,7 +2,7 @@
 A custom set of agent profiles, skills, slash commands, rules (such as AGENTS.md), and plugins for AI tools like Claude, OpenCode, and others.
 
 ## Overview
-This setup implements a skill-first agent architecture: two primary agents with a centralized skill library instead of multiple specialized agents and sub-agents. Multi-agent systems with numerous specialized agents showed worse results due to redundant handoffs and context fragmentation. The current approach is simpler and more effective. The `Coder` agent is used for development tasks and the `SMM` agent (Social Media Marketing) for social media and working with content like posts and articles. Each has its own system prompt and temperature parameter suited to its domain.
+This setup implements a skill-first agent architecture: three primary agents with a centralized skill library instead of multiple specialized agents and sub-agents. Multi-agent systems with numerous specialized agents showed worse results due to redundant handoffs and context fragmentation. The current approach is simpler and more effective. `Agent` is the universal primary agent with all system prompt and personalization behavior rules embedded directly. The `Coder` agent is used for development tasks and the `SMM` agent (Social Media Marketing) for social media and working with content like posts and articles. Each has its own system prompt and temperature parameter suited to its domain.
 
 This repository focuses on customization. See the [OpenCode documentation](https://opencode.ai/docs) for installation and basic OpenCode configuration.
 
