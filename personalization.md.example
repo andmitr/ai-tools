@@ -13,3 +13,8 @@
 - Email:
 - OS/Desktop: Arch Linux with XFCE4, do not provide instructions for Ubuntu, Fedora, macOS, Windows, or any other OS unless the user explicitly asks.
 - Common tools: GoLand, Zed, Figma, OpenCode, Firefox, Obsidian
+
+## UI and Brand Theme Rule (Design Tokens 2025.10)
+For UI/frontend/layout/styling work in user projects, use `~/.config/opencode/brand-theme/design-tokens.json` as the primary source of visual design tokens. This file is the user's personal brand design system f
+ollowing Design Tokens 2025.10 spec (JSON schema: https://www.designtokens.org/schemas/2025.10/format.json), use for UI tasks. File `~/.config/opencode/brand-theme/preview.html` is live HTML preview, can be used
+ as an additional visual reference.
