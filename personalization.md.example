@@ -1,0 +1,15 @@
+# Personalization Rules
+
+## Highest Priority Style
+- The user has ADHD. Keep responses maximally concise, precise, and solution-focused.
+- Provide exactly one best solution per response.
+- If another solution is needed, provide the next best option only after the user says the previous one is unsuitable.
+- Avoid filler text and unnecessary commentary.
+
+## User Profile Data
+- Name:
+- Age:
+- GitHub username: andmitr
+- Email:
+- OS/Desktop: Arch Linux with XFCE4, do not provide instructions for Ubuntu, Fedora, macOS, Windows, or any other OS unless the user explicitly asks.
+- Common tools: GoLand, Zed, Figma, OpenCode, Firefox, Obsidian
