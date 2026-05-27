@@ -1,0 +1,784 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Andrew Dmitriev (andmitr) | Brand Theme Preview</title>
+    <style>
+      :root {
+        /* Backgrounds */
+        --bg-page: #0f1722;
+        --bg-surface: #1a2433;
+        --bg-elevated: #25324a;
+        --bg-code: #0b1018;
+
+        /* Text */
+        --text-primary: #f2f6fb;
+        --text-body: #cfe0f0;
+        --text-muted: #7a8ba3;
+        --text-on-accent: #0f1722;
+
+        /* Borders */
+        --border-default: #3a4a5f;
+
+        /* Primary */
+        --primary-soft: #a8c5e0;
+        --primary-base: #4a90c2;
+        --primary-pressed: #2e5c82;
+
+        /* Accent */
+        --accent-base: #e6522c;
+        --accent-hover: #f2855e;
+
+        /* Status */
+        --status-success: #3fb950;
+        --status-warning: #d29922;
+        --status-danger: #f85149;
+        --status-info: #00add8;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        background-color: var(--bg-page);
+        color: var(--text-body);
+        line-height: 1.6;
+        padding: 2rem;
+      }
+
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      /* Typography */
+      h1 {
+        color: var(--text-primary);
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        background: linear-gradient(135deg, var(--primary-soft) 0%, var(--text-primary) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      h2 {
+        color: var(--text-primary);
+        font-size: 1.75rem;
+        font-weight: 600;
+        margin: 2rem 0 1rem;
+      }
+
+      h3 {
+        color: var(--text-primary);
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin: 1.5rem 0 0.75rem;
+      }
+
+      p {
+        margin-bottom: 1rem;
+        color: var(--text-body);
+      }
+
+      a {
+        color: var(--primary-base);
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+
+      a:hover {
+        color: var(--primary-pressed);
+      }
+
+      /* Focus Ring */
+      :focus-visible {
+        outline: 2px solid var(--accent-base);
+        outline-offset: 2px;
+      }
+
+      /* Cards */
+      .card {
+        background-color: var(--bg-surface);
+        border: 1px solid var(--border-default);
+        border-radius: 8px;
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+        transition: background-color 0.2s;
+      }
+
+      .card:hover {
+        background-color: var(--bg-elevated);
+      }
+
+      /* Buttons */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+        font-weight: 500;
+        border-radius: 6px;
+        border: none;
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+
+      .btn-primary {
+        background-color: var(--primary-base);
+        color: var(--text-primary);
+      }
+
+      .btn-primary:hover {
+        background-color: var(--primary-pressed);
+      }
+
+      .btn-accent {
+        background-color: var(--accent-base);
+        color: var(--text-on-accent);
+      }
+
+      .btn-accent:hover {
+        background-color: var(--accent-hover);
+      }
+
+      .btn-secondary {
+        background-color: var(--bg-surface);
+        color: var(--text-body);
+        border: 1px solid var(--border-default);
+      }
+
+      .btn-secondary:hover {
+        background-color: var(--bg-elevated);
+      }
+
+      /* Code Blocks */
+      .code-block {
+        background-color: var(--bg-code);
+        border: 1px solid var(--border-default);
+        border-radius: 6px;
+        padding: 1rem;
+        font-family: "Monaco", "Menlo", "Ubuntu Mono", monospace;
+        font-size: 0.875rem;
+        overflow-x: auto;
+        margin: 1rem 0;
+      }
+
+      .code-block .keyword {
+        color: var(--status-info);
+      }
+      .code-block .string {
+        color: var(--status-success);
+      }
+      .code-block .function {
+        color: var(--primary-soft);
+      }
+
+      /* Hero Section */
+      .hero {
+        background: linear-gradient(135deg, var(--bg-page) 0%, var(--bg-surface) 100%);
+        border: 1px solid var(--border-default);
+        border-radius: 12px;
+        padding: 48px;
+        margin-bottom: 40px;
+      }
+
+      .hero h1 {
+        background: linear-gradient(135deg, var(--primary-soft) 0%, var(--text-primary) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 16px;
+      }
+
+      .hero p {
+        font-size: 1.25rem;
+        color: var(--text-body);
+        margin-bottom: 24px;
+      }
+
+      /* Navigation */
+      nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 24px;
+        margin-bottom: 40px;
+        padding-bottom: 24px;
+        border-bottom: 1px solid var(--border-default);
+      }
+
+      nav a {
+        color: var(--text-body);
+        text-decoration: none;
+        padding: 8px 16px;
+        border-radius: 6px;
+        transition: all 0.2s ease;
+      }
+
+      nav a:hover {
+        background-color: rgba(74, 144, 194, 0.1);
+        color: var(--primary-base);
+      }
+
+      nav a:focus {
+        outline: 2px solid var(--accent-base);
+        outline-offset: 2px;
+      }
+
+      /* Status Alerts */
+      .alert {
+        padding: 16px;
+        border-radius: 6px;
+        margin-bottom: 16px;
+      }
+
+      .alert-info {
+        background-color: rgba(0, 173, 216, 0.1);
+        border: 1px solid rgba(0, 173, 216, 0.3);
+        color: var(--text-body);
+      }
+
+      .alert-warning {
+        background-color: rgba(210, 153, 34, 0.1);
+        border: 1px solid rgba(210, 153, 34, 0.3);
+        color: var(--text-body);
+      }
+
+      .alert-danger {
+        background-color: rgba(248, 81, 73, 0.1);
+        border: 1px solid rgba(248, 81, 73, 0.3);
+        color: var(--text-body);
+      }
+
+      /* Progress Bars */
+      .progress {
+        margin-bottom: 16px;
+      }
+
+      .progress-label {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 8px;
+        color: var(--text-body);
+        font-size: 0.875rem;
+      }
+
+      .progress-bar {
+        height: 8px;
+        background-color: var(--bg-code);
+        border-radius: 4px;
+        overflow: hidden;
+      }
+
+      .progress-fill {
+        height: 100%;
+        background-color: var(--primary-base);
+        border-radius: 4px;
+      }
+
+      .progress-fill.accent {
+        background-color: var(--accent-base);
+      }
+
+      /* Tags */
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 16px;
+      }
+
+      .tag {
+        padding: 4px 12px;
+        background-color: var(--bg-elevated);
+        border: 1px solid var(--border-default);
+        border-radius: 6px;
+        font-size: 0.875rem;
+        color: var(--text-body);
+      }
+
+      /* Avatar */
+      .avatar {
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        background-color: var(--primary-base);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: var(--bg-page);
+      }
+
+      /* Footer */
+      footer {
+        margin-top: 60px;
+        padding-top: 24px;
+        border-top: 1px solid var(--border-default);
+        color: var(--text-muted);
+        font-size: 0.875rem;
+      }
+
+      /* Select */
+      select {
+        width: 100%;
+        padding: 0.75rem;
+        background-color: var(--bg-surface);
+        border: 1px solid var(--border-default);
+        border-radius: 6px;
+        color: var(--text-body);
+        font-size: 1rem;
+        transition: border-color 0.2s;
+      }
+
+      select:focus {
+        outline: none;
+        border-color: var(--primary-base);
+      }
+
+      select:focus {
+        outline: 2px solid var(--accent-base);
+        outline-offset: 2px;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        h1 {
+          font-size: 2rem;
+        }
+
+        h2 {
+          font-size: 1.5rem;
+        }
+
+        .hero {
+          padding: 32px 20px;
+        }
+
+        .grid {
+          grid-template-columns: 1fr;
+        }
+
+        nav {
+          flex-wrap: wrap;
+        }
+      }
+
+      /* Status Badges */
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.25rem 0.75rem;
+        border-radius: 9999px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      .badge-success {
+        background-color: rgba(63, 185, 80, 0.15);
+        color: var(--status-success);
+      }
+
+      .badge-warning {
+        background-color: rgba(210, 153, 34, 0.15);
+        color: var(--status-warning);
+      }
+
+      .badge-danger {
+        background-color: rgba(248, 81, 73, 0.15);
+        color: var(--status-danger);
+      }
+
+      .badge-info {
+        background-color: rgba(0, 173, 216, 0.15);
+        color: var(--status-info);
+      }
+
+      /* Form Elements */
+      .form-group {
+        margin-bottom: 1.5rem;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 0.5rem;
+        color: var(--text-primary);
+        font-weight: 500;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      textarea {
+        width: 100%;
+        padding: 0.75rem;
+        background-color: var(--bg-surface);
+        border: 1px solid var(--border-default);
+        border-radius: 6px;
+        color: var(--text-body);
+        font-size: 1rem;
+        transition: border-color 0.2s;
+      }
+
+      input:focus,
+      textarea:focus {
+        outline: none;
+        border-color: var(--primary-base);
+      }
+
+      /* Grid Layout */
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+        margin: 2rem 0;
+      }
+
+      /* Table */
+      .table-container {
+        overflow-x: auto;
+        margin: 1.5rem 0;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.875rem;
+      }
+
+      th {
+        text-align: left;
+        padding: 0.75rem 1rem;
+        background-color: var(--bg-surface);
+        color: var(--text-primary);
+        font-weight: 600;
+        border-bottom: 2px solid var(--border-default);
+      }
+
+      td {
+        padding: 0.75rem 1rem;
+        border-bottom: 1px solid var(--border-default);
+        color: var(--text-body);
+      }
+
+      tr:last-child td {
+        border-bottom: none;
+      }
+
+      tr:hover td {
+        background-color: var(--bg-elevated);
+      }
+
+      /* Section divider */
+      .divider {
+        height: 1px;
+        background-color: var(--border-default);
+        margin: 2rem 0;
+      }
+
+      /* Utility */
+      .text-muted {
+        color: var(--text-muted);
+      }
+
+      .text-small {
+        font-size: 0.875rem;
+      }
+
+      .mt-4 {
+        margin-top: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Brand Style Preview</h1>
+      <p class="text-muted">Andrew Dmitriev (aka andmitr) | Personal Brand Color Theme</p>
+
+      <div class="card">
+        <p>
+          Dark-first UI with cool steel-blue core (#4A90C2) and warm orange signal accent (#E6522C). Always follow
+          the
+          design token rules: maximum 3 hues per screen, proper contrast ratios, and use accent.base only for the single
+          most important CTA on a screen.
+        </p>
+      </div>
+
+      <!-- Navigation -->
+      <nav>
+        <a href="#color-palette">Colors</a>
+        <a href="#buttons">Buttons</a>
+        <a href="#links">Links</a>
+        <a href="#badges">Badges</a>
+        <a href="#forms">Forms</a>
+        <a href="#code-blocks">Code</a>
+        <a href="#status-alerts">Alerts</a>
+        <a href="#progress-bars">Progress</a>
+        <a href="#tags">Tags</a>
+        <a href="#typography">Typography</a>
+        <a href="#tables">Tables</a>
+        <a href="#focus">Focus</a>
+      </nav>
+      
+      <h2 id="color-palette">Color Palette</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Backgrounds</h3>
+          <div class="code-block" style="margin: 0.5rem 0">
+            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem">
+              <div style="width: 24px; height: 24px; background-color: #0f1722; border-radius: 4px"></div>
+              <span>page: #0F1722</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem">
+              <div style="width: 24px; height: 24px; background-color: #1a2433; border-radius: 4px"></div>
+              <span>surface: #1A2433</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.5rem">
+              <div style="width: 24px; height: 24px; background-color: #25324a; border-radius: 4px"></div>
+              <span>elevated: #25324A</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Primary</h3>
+          <div class="code-block" style="margin: 0.5rem 0">
+            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem">
+              <div style="width: 24px; height: 24px; background-color: #a8c5e0; border-radius: 4px"></div>
+              <span>soft: #A8C5E0</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem">
+              <div style="width: 24px; height: 24px; background-color: #4a90c2; border-radius: 4px"></div>
+              <span>base: #4A90C2</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.5rem">
+              <div style="width: 24px; height: 24px; background-color: #2e5c82; border-radius: 4px"></div>
+              <span>pressed: #2E5C82</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Accent</h3>
+          <div class="code-block" style="margin: 0.5rem 0">
+            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem">
+              <div style="width: 24px; height: 24px; background-color: #e6522c; border-radius: 4px"></div>
+              <span>base: #E6522C</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.5rem">
+              <div style="width: 24px; height: 24px; background-color: #f2855e; border-radius: 4px"></div>
+              <span>hover: #F2855E</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Status</h3>
+          <div class="code-block" style="margin: 0.5rem 0">
+            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem">
+              <div style="width: 24px; height: 24px; background-color: #3fb950; border-radius: 4px"></div>
+              <span>success: #3FB950</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem">
+              <div style="width: 24px; height: 24px; background-color: #d29922; border-radius: 4px"></div>
+              <span>warning: #D29922</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem">
+              <div style="width: 24px; height: 24px; background-color: #f85149; border-radius: 4px"></div>
+              <span>danger: #F85149</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.5rem">
+              <div style="width: 24px; height: 24px; background-color: #00add8; border-radius: 4px"></div>
+              <span>info: #00ADD8</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="divider"></div>
+      
+      <h2 id="buttons">Buttons</h2>
+      <div style="display: flex; gap: 1rem; flex-wrap: wrap; align-items: center">
+        <button class="btn btn-primary">Primary Button</button>
+        <button class="btn btn-accent">Accent CTA</button>
+        <button class="btn btn-secondary">Secondary</button>
+      </div>
+
+      <div class="divider"></div>
+
+      <h2 id="links">Links</h2>
+      <p>Primary links use <a href="#">color.primary.base</a>. Never use accent.base for ordinary links.</p>
+
+      <div class="divider"></div>
+
+      <h2 id="badges">Status Badges</h2>
+      <div style="display: flex; gap: 0.75rem; flex-wrap: wrap">
+        <span class="badge badge-success">Success</span>
+        <span class="badge badge-warning">Warning</span>
+        <span class="badge badge-danger">Danger</span>
+        <span class="badge badge-info">Info</span>
+      </div>
+
+      <div class="divider"></div>
+
+      <h2 id="forms">Form Elements</h2>
+      <div class="card">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" placeholder="Enter your name" />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="Enter your email" />
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" rows="4" placeholder="Enter your message"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="role">Role</label>
+          <select id="role">
+            <option>Backend Engineer</option>
+            <option>DevOps Engineer</option>
+            <option>SRE</option>
+          </select>
+        </div>
+        <button class="btn btn-primary">Submit</button>
+      </div>
+
+      <div class="divider"></div>
+
+      <h2 id="code-blocks">Code Blocks</h2>
+      <div class="code-block">
+        <span class="keyword">const</span> <span class="function">brandTheme</span> = {
+        <span class="string">"name"</span>: <span class="string">"Andrew Dmitriev"</span>,
+        <span class="string">"role"</span>: <span class="string">"Backend/DevOps Engineer"</span>,
+        <span class="string">"theme"</span>: <span class="string">"Dark-first"</span>,
+        <span class="string">"primary"</span>: <span class="string">"#4A90C2"</span>,
+        <span class="string">"accent"</span>: <span class="string">"#E6522C"</span>
+        };
+      </div>
+
+      <div class="divider"></div>
+
+      <h2 id="status-alerts">Status Alerts</h2>
+      <div class="card">
+        <div class="alert alert-info"><strong>Info:</strong> This is an informational message.</div>
+        <div class="alert alert-warning"><strong>Warning:</strong> This is a warning message.</div>
+        <div class="alert alert-danger"><strong>Error:</strong> This is an error message.</div>
+      </div>
+
+      <div class="divider"></div>
+
+      <h2 id="progress-bars">Progress Bars</h2>
+      <div class="card">
+        <div class="progress">
+          <div class="progress-label">
+            <span>Primary Progress</span>
+            <span>75%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 75%"></div>
+          </div>
+        </div>
+        <div class="progress">
+          <div class="progress-label">
+            <span>Accent Progress</span>
+            <span>45%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill accent" style="width: 45%"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <h2 id="tags">Tags</h2>
+      <div class="card">
+        <div class="tags">
+          <span class="tag">Go</span>
+          <span class="tag">Kubernetes</span>
+          <span class="tag">Docker</span>
+          <span class="tag">AWS</span>
+          <span class="tag">Terraform</span>
+          <span class="tag">PostgreSQL</span>
+          <span class="tag">Redis</span>
+          <span class="tag">gRPC</span>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <h2 id="typography">Typography Hierarchy</h2>
+      <div class="card">
+        <h1 style="font-size: 2.5rem; margin-bottom: 0.5rem">Heading 1</h1>
+        <h2 style="font-size: 1.75rem; margin-bottom: 0.5rem">Heading 2</h2>
+        <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem">Heading 3</h3>
+        <p style="margin-bottom: 0">
+          Body text with <a href="#">links</a> and <span class="text-muted">muted text</span>.
+        </p>
+      </div>
+
+      <div class="divider"></div>
+
+      <h2 id="tables">Table</h2>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Token</th>
+              <th>Value</th>
+              <th>Usage</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>bg.page</td>
+              <td>#0F1722</td>
+              <td>Page background</td>
+            </tr>
+            <tr>
+              <td>bg.surface</td>
+              <td>#1A2433</td>
+              <td>Cards, panels</td>
+            </tr>
+            <tr>
+              <td>primary.base</td>
+              <td>#4A90C2</td>
+              <td>Links, primary buttons</td>
+            </tr>
+            <tr>
+              <td>accent.base</td>
+              <td>#E6522C</td>
+              <td>CTA, focus rings</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="divider"></div>
+
+      <h2 id="focus">Focus States</h2>
+      <p>
+        Press Tab to see focus rings on interactive elements. Focus ring uses 2px accent.base outline with 2px offset.
+      </p>
+
+      <div class="card">
+        <h3>Interactive Card</h3>
+        <p>This card demonstrates hover states and focus rings.</p>
+        <button class="btn btn-primary">Primary Action</button>
+        <button class="btn btn-accent">Accent Action</button>
+      </div>
+    </div>
+  </body>
+</html>
