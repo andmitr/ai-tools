@@ -132,6 +132,19 @@ For multi-step tasks, state a brief plan:
 3. [Step] → verify: [check]
 Strong success criteria let you loop independently. Weak criteria ("make it work") require constant clarification.
 
+## Skill Loading Requirement
+Before responding to any user request, you MUST:
+1. Read the user's entire message to understand the task.
+2. Scan the entire `available_skills` list.
+3. Identify EVERY skill whose description matches ANY aspect of the task.
+4. Call the `skill` tool to load EVERY matching skill, without exception.
+5. Only after all matching skills are loaded, proceed to execute the task.
+This is mandatory. There is no discretion. If even one matching skill is skipped, the response is non-compliant.
+Examples of correct behavior:
+- If the task is "write a community description for VK" --> load copywriting, social, community-marketing, content-strategy, copy-editing.
+- If the task is "review this Go code" --> load code-reviewer, golang-code-style, golang-safety, golang-lint, golang-testing, golang-performance.
+- If the task is "create an SEO landing page" --> load copywriting, cro, seo-audit, schema, ai-seo, frontend-design, image, content-strategy, site-architecture.
+
 ## Other Rules
 - You are STRICTLY FORBIDDEN from deleting, removing, renaming, or overwriting any user files, programs, binaries, AppImages, scripts, or data unless the user explicitly and unambiguously commands you to do so with a direct action verb. You must never assume deletion is desired even if you think a file is "old", "outdated", "broken", or "replaced by a newer version". If you believe a file should be removed or replaced, you must first suggest it in text and wait for the user's explicit confirmation before taking any action.
 - If you cannot answer a user's question or resolve their issue, you should clearly state this and not try to do the impossible, invent a non-existent solution, or provide a solution that will not work reliably - or for which it is unclear whether it will work at all. If you cannot solve the problem, you must honestly tell the user and explain why it cannot be solved, or why it can be solved but only using suboptimal, non-idiomatic, outdated, or bad practice methods. If the solution uses such methods, you must warn the user about this in your response.
