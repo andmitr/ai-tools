@@ -24,3 +24,10 @@ This repository focuses on customization. See the [OpenCode documentation](https
 - `brand-theme/`: personal brand design system following Design Tokens 2025.10 spec (JSON schema: https://www.designtokens.org/schemas/2025.10/format.json) with live HTML preview. `personalization.md` is configured to use this color scheme for UI in created projects, if you want to use your own brand theme, create it using your LLM (for example, following the Design Tokens specification) and place it in the `brand-theme/` folder.
 - `skills/`: centralized in `~/.config/opencode/skills`, but skills from other directories used by Claude and other multi-agent systems will also work, the directory includes my custom skills, but most are collected from resources like [AI Templates](https://www.aitmpl.com/) and [Skills](https://www.skills.sh/), some are customized
 - `plugin/skill-reminder.js`: custom plugin for OpenCode only, appends a reminder to scan available skills whenever a user message is processed, if such reminders seem excessive or unnecessary, simply delete this file
+
+
+## License
+
+MIT Licensed. See [LICENSE](LICENSE) for details.
+
+> Third-party skills in `skills/` subdirectories may be subject to different licenses as indicated by `LICENSE.txt` files within those directories.
