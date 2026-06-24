@@ -1,3 +1,4 @@
+
 # AI Tools
 A custom set of agent profiles, skills, slash commands, rules (such as AGENTS.md), and plugins for AI tools like Claude, OpenCode, and others.
 
@@ -25,9 +26,8 @@ This repository focuses on customization. See the [OpenCode documentation](https
 - `skills/`: centralized in `~/.config/opencode/skills`, but skills from other directories used by Claude and other multi-agent systems will also work, the directory includes my custom skills, but most are collected from resources like [AI Templates](https://www.aitmpl.com/) and [Skills](https://www.skills.sh/), some are customized
 - `plugin/skill-reminder.js`: custom plugin for OpenCode only, appends a reminder to scan available skills whenever a user message is processed, if such reminders seem excessive or unnecessary, simply delete this file
 
-
 ## License
 
-MIT Licensed. See [LICENSE](LICENSE) for details.
+My original contributions in this repository are MIT Licensed. See [LICENSE](LICENSE) for details.
 
-> Third-party skills in `skills/` subdirectories may be subject to different licenses as indicated by `LICENSE.txt` files within those directories.
+> This repository is a curated collection. Most skills in `skills/` were sourced from [skills.sh](https://www.skills.sh/) and [aitmpl.com](https://www.aitmpl.com/) and remain under their original authors' licenses. Some skills include their own `LICENSE.txt` files which take precedence for those directories. The MIT license above applies only to original work authored by Andrew Dmitriev.
